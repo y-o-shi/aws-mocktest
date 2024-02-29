@@ -7,8 +7,8 @@ import boto3
 sys.path.append("../")
 import dynamo_api
 
-TABLE_DEF_FILE = "./test_data/foo_table_def.json"
-TABLE_DATA_FILE = "./test_data/foo_table_data.json"
+TABLE_DEF_FILE = "./test_data/table_def.json"
+TABLE_DATA_FILE = "./test_data/table_data.json"
 
 
 @pytest.fixture(autouse=True, scope="module")
@@ -32,7 +32,6 @@ def setup_ddb():
         table = dynamodb.Table(table_name)
         for item in data_items:
             table.put_item(Item=item)
-
         yield
 
 
