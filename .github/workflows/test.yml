@@ -13,4 +13,4 @@ jobs:
       - name: Docker Image Build
         run: docker build -t aws-mocktest-python .
       - name: Test
-        run: docker run --rm -v '${PWD}/src:/app/src' -it aws-mocktest-python
+        run: docker run --rm -v '${PWD}/src:/app/src' aws-mocktest-python
