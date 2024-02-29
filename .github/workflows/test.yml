@@ -1,0 +1,16 @@
+name: Auto test by github actions
+
+on:
+  push:
+    branches:
+      - "*"
+jobs:
+  all-branches-process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Docker Image Build
+        run: docker build -t aws-mocktest-python .
+      - name: Test
+        run: docker run --rm -v '${PWD}/src:/app/src' -it aws-mocktest-python
