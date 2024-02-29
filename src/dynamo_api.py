@@ -9,7 +9,6 @@ def get_item_from_id(table_name, id):
 
 def connect_dynamodb(table_name):
     dynamodb = boto3.resource("dynamodb", region_name="ap-northeast-1")
-    print("connected table = " + table_name)
     return dynamodb.Table(table_name)
 
 
