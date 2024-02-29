@@ -9,5 +9,5 @@ $ docker build -t aws-mocktest-python .
 # execute test by Pytest
 $ make test
 or
-$ docker run --rm -v '${PWD}/src:/app/src' -it aws-mocktest-python
+$ docker run --rm -v "${PWD}/src:/app/src" -it aws-mocktest-python
 ```
