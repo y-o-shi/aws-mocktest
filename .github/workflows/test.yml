@@ -5,7 +5,7 @@ on:
     branches:
       - "*"
 jobs:
-  all-branches-process:
+  imageBuildAndTest:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
