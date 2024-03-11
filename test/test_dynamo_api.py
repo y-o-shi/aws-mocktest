@@ -5,25 +5,24 @@ from moto import mock_aws
 import boto3
 
 sys.path.append("../")
-from dynamo_api import *
+from src.dynamo_api import *
 
-TABLE_DEF_FILE = "./test_data/table_def.json"
-TABLE_DATA_FILE = "./test_data/table_data.json"
+TABLE_DEF_FILE = "test_data/table_def.json"
+TABLE_DATA_FILE = "test_data/table_data.json"
 _table_name = "test_table"
 
 
 @pytest.fixture(autouse=True, scope="module")
 def setup_ddb():
     with mock_aws():
-
         dynamodb = boto3.resource("dynamodb", region_name="ap-northeast-1")
 
         # テーブルの作成
         with open(TABLE_DEF_FILE) as f:
-            foo_table_def = json.load(f)
+            table_def = json.load(f)
         dynamodb.create_table(
             TableName=_table_name,
-            **foo_table_def,
+            **table_def,
         )
 
         # テーブルにデータを投入
