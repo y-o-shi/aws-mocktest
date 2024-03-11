@@ -6,6 +6,6 @@ ENV PYTHONPATH /app
 COPY ./requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-WORKDIR /app/src/test
+WORKDIR /app/test
 
 CMD ["pytest", ".", "-sv"]
