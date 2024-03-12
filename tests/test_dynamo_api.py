@@ -1,14 +1,10 @@
-import sys
-import json
-import pytest
+import sys, os, json, pytest, boto3
 from moto import mock_aws
-import boto3
-
-sys.path.append("../")
 from src.dynamo_api import *
 
-TABLE_DEF_FILE = "test_data/table_def.json"
-TABLE_DATA_FILE = "test_data/table_data.json"
+dirname = os.path.dirname(__file__)
+TABLE_DEF_FILE = os.path.join(dirname, "test_data/table_def.json")
+TABLE_DATA_FILE = os.path.join(dirname, "test_data/table_data.json")
 _table_name = "test_table"
 
 

@@ -4,4 +4,4 @@ build-test-image:
 
 # execute test case (Pytest)
 test:
-	docker run --rm -v '${PWD}/src:/app/src' -it aws-autotest-python
+	docker run --rm -v '${PWD}:/app' -it aws-autotest-python
