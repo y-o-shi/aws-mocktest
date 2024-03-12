@@ -2,8 +2,7 @@ name: Auto test by github actions
 
 on:
   push:
-    branches:
-      - "*"
+
 jobs:
   imageBuildAndTest:
     runs-on: ubuntu-latest
